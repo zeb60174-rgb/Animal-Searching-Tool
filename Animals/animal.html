@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Explorer – Search Any Animal with Photo</title>
+    <link rel="stylesheet" href="animal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1><i class="fas fa-paw"></i> Animal Explorer</h1>
+            <p class="tagline">Discover any animal – name, group, functionality, and a real photo</p>
+        </header>
+
+        <div class="search-area">
+            <div class="search-box">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="animalInput" placeholder="e.g., axolotl, okapi, flamingo, komodo dragon..." autocomplete="off">
+                <button id="searchBtn" class="btn-search">Search</button>
+            </div>
+            <div id="suggestions" class="suggestions"></div>
+        </div>
+
+        <!-- Loading indicator -->
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Searching for your animal and fetching its photo...</p>
+        </div>
+
+        <!-- Error message -->
+        <div id="error" class="error hidden">
+            <i class="fas fa-exclamation-circle"></i>
+            <p id="errorMsg"></p>
+            <button id="retryBtn" class="btn-outline">Try again</button>
+        </div>
+
+        <!-- Results card -->
+        <div id="result" class="result-card hidden">
+            <div class="image-section">
+                <img id="animalImage" src="" alt="Animal photo">
+                <div id="imageCredit" class="image-credit"></div>
+            </div>
+            <div class="info-section">
+                <h2 id="animalName"></h2>
+                <p id="scientificName" class="scientific"></p>
+
+                <div class="quick-info">
+                    <div><span class="label"><i class="fas fa-tag"></i> Group:</span> <span id="group"></span></div>
+                    <div><span class="label"><i class="fas fa-globe"></i> Habitat:</span> <span id="habitat"></span></div>
+                    <div><span class="label"><i class="fas fa-utensils"></i> Diet:</span> <span id="diet"></span></div>
+                    <div><span class="label"><i class="fas fa-map-marker-alt"></i> Location:</span> <span id="location"></span></div>
+                </div>
+
+                <div class="detail">
+                    <h3><i class="fas fa-cogs"></i> Ecological Role / Functionality</h3>
+                    <p id="functionality"></p>
+                </div>
+
+                <div class="detail">
+                    <h3><i class="fas fa-star"></i> Fun Facts</h3>
+                    <ul id="facts"></ul>
+                </div>
+
+                <div class="conservation">
+                    <span id="conservationBadge" class="badge"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Popular suggestions (clickable) -->
+        <div class="popular">
+            <h3><i class="fas fa-fire"></i> Try these popular animals</h3>
+            <div id="popularTags" class="tags"></div>
+        </div>
+
+        <footer>
+            <p>🐾 Data from Wikipedia & Wikimedia Commons · Images guaranteed</p>
+        </footer>
+    </div>
+
+    <script src="animal.js"></script>
+</body>
+</html>
