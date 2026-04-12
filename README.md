@@ -77,7 +77,7 @@ cd animalis
 
 ## 🌐 Live Demo (Optional)
 
-Add your deployed link here (GitHub Pages recommended)
+https://github.com/zeb60174-rgb/Animal-Searching-Tool/html
 
 ---
 
